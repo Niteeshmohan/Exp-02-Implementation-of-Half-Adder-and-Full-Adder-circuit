@@ -1,4 +1,4 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
+# Exp-03-Implementation-of-Half-Adder-and-Full-Adder-circuit
 
 # Implementation-of-Half-Adder-and-Full-Adder-circuit
 ### AIM:
@@ -20,12 +20,12 @@ Full adder is a digital circuit used to calculate the sum of three binary bits. 
 
 Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = AB + ACin + BCin
 
- ![image](https://user-images.githubusercontent.com/36288975/163552156-a13e5a56-c638-4110-97d9-8896907c8d25.png)
+ ![image](de1.png)
 
 #### Figure -01 HALF ADDER 
 
 
-![image](https://user-images.githubusercontent.com/36288975/163552057-b3547877-6d07-45b4-b7e0-bcfebfad9e1d.png)
+![image](de2.png)
 
 #### Figure -02 FULL ADDER 
 
@@ -34,21 +34,62 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 Connect the supply (+5V) to the circuit
 Switch ON the main switch
 If the output is 1, then the led glows.
-### 
-Program:
-/*
-Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+### Program:
+```
+# Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
+# Developed by: NITEESH M
+# RegisterNumber: 212222230098
+```
+```
+HALF ADDER
 
+module Adder(a,b,sum,carry);
+input a,b;
+output sum,carry;
+xor(sum,a,b);
+and(carry,a,b);
+endmodule 
+
+```
+``` 
+FULL ADDER
+
+module FullAdder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum = ((a^b)^c);
+assign carry = ((a&b)|(b&c)|(c&a));
+endmodule
+```
 ### Output:
-### RTL
-### TIMING DIAGRAM
+### HALF ADDER:
 
+#### LOGIC SYMBOL
+![ha1](de3.png)
 
-### TRUTH TABLE 
+#### RTL
+![ha2](de4.png)
+
+#### TIMING DIAGRAM
+![ha3](de5.png)
+
+#### TRUTH TABLE 
+![ha4](de6.jpeg)
+
+### FULL ADDER:
+#### LOGIC SYMBOL
+![fa1](de7.png)
+
+#### RTL
+![fa2](de8.png)
+
+#### TIMING DIAGRAM
+![fa3](de9.png)
+
+#### TRUTH TABLE
+![fa4](de10.jpeg)
+
 
 ### Result:
+Thus, a half adder and full adder circuit is designed to verify its truth table in Quartus using Verilog programming.
+
